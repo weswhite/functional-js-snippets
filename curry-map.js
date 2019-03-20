@@ -10,3 +10,8 @@ var get = curry(function(property, object){ return object[property] })
 objects.map(get('id')) //= [1, 2, 3]
 
 //https://hughfdjackson.com/javascript/why-curry-helps/
+
+var map = curry(function(fn, value){ return value.map(fn) })
+var getIDs = map(get('id'))
+
+getIDs(objects) //= [1, 2, 3]
